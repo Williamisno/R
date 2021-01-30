@@ -1,5 +1,5 @@
 # simple randomization
-sample_tailor <- function(n, ratio, trt, seed){
+Simsample <- function(n, ratio, trt, seed){
   set.seed(seed)
   u <- group <- numeric(n)
   prob <- cumsum(ratio)/sum(ratio)
@@ -14,7 +14,7 @@ sample_tailor <- function(n, ratio, trt, seed){
   data.frame(obs = 1:n, 
              groups = trt[group])
 }
-sample_tailor(n = 50, 
+Simsample(n = 50, 
               ratio = c(1,1), 
               trt = c("A", "B"),
               seed = 20210128)
